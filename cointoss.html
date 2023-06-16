@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coint Toss</title>
+</head>
+
+<body>
+    <div id="call">
+        <h1>Call it, friendo: Heads or Tails?</h1>
+        <button onclick="heads()" id="heads">Heads</button>
+        <button onclick="tails()" id="tails">Tails</button>
+    </div>
+    <h2>Result: <span id="res"></span></h2>
+    <div id="img"></div>
+    <div id="rel"></div>
+
+    <script>
+        // Comecei a escrever esse código quando estava com sono
+        // Está uma merda, mas é o que tem pra hoje
+        let valor = "";
+        let coin = "";
+        function heads() {
+            valor = "heads";
+            flip();
+        }
+        function tails() {
+            valor = "tails";
+            flip();
+        }
+        function flip() {
+            let res = document.getElementById("res");
+            let img = document.getElementById("img");
+            let btn = document.getElementById("rel");
+            let num = Math.floor(Math.random() * 10) + 2;
+
+            if (num % 2 == 0) {
+                coin = "heads";
+            } else {
+                coin = "tails";
+            }
+
+            if (valor == coin) {
+                res.innerHTML = coin + "<br>Well done!";
+                img.innerHTML = '<img src="anton smile resize.png">'
+            } else {
+                res.innerHTML = coin + "<br>You lost";
+                img.innerHTML = '<img src="anton shotgun resize.png">'
+            }
+            btn.innerHTML = '<button onclick="reload()">Reload page</button>'
+            hide();
+        }
+        function hide(){
+            let call = document.getElementById("call");
+            call.style.display = "none";
+        }
+        function reload(){
+            location.reload();
+        }
+        // O código pode estar uma merda, mas tá funcionando
+    </script>
+</body>
+
+</html>
