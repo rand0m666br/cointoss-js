@@ -13,7 +13,7 @@
         <button onclick="heads()" id="heads">Heads</button>
         <button onclick="tails()" id="tails">Tails</button>
     </div>
-    <h2>Result: <span id="res"></span></h2>
+    <h2 id="res"></h2>
     <div id="img"></div>
     <div id="rel"></div>
 
@@ -43,10 +43,10 @@
             }
 
             if (valor == coin) {
-                res.innerHTML = coin + "<br>Well done!";
+                res.innerHTML = "Result: " + coin + "<br>Well done!";
                 img.innerHTML = '<img src="images/anton smile resize.png">'
             } else {
-                res.innerHTML = coin + "<br>You lost";
+                res.innerHTML = "Result: " +  coin + "<br>You lost";
                 img.innerHTML = '<img src="images/anton shotgun resize.png">'
             }
             btn.innerHTML = '<button onclick="reload()">Reload page</button>'
